@@ -9,36 +9,36 @@ public class Lab1 {
         }
         float[] x = new float[19];
         for (int i = 0; i < x.length; i++) {
-            x[i] = MyRandom();
+            x[i] = myRandom();
         }
         for (float n : x) {
             System.out.println(n);
         }
-        double[][] anew = new double[20][19];
-        double resup;
+        double[][] aNew = new double[20][19];
+        double resUp;
         double log1;
         double log2;
         double tan;
-        double resdown;
+        double resDown;
         double res;
         for (int i = 0; i < 20; i++) {
             for(int j = 0; j < 19; j++) {
                 switch (a[i]) {
                     case 5:
-                        anew[i][j] = Math.atan(Math.pow(Math.E, Math.cbrt((-1) * Math.pow(Math.sin(x[j]), 2))));
+                        aNew[i][j] = Math.atan(Math.pow(Math.E, Math.cbrt((-1) * Math.pow(Math.sin(x[j]), 2))));
                         break;
                     case 1, 2, 3, 4, 8, 10, 11, 12, 15, 20:
-                        anew[i][j] = Math.pow((4 + Math.tan(Math.asin((x[j] - 5) / 16))) / 3, 2);
+                        aNew[i][j] = Math.pow((4 + Math.tan(Math.asin((x[j] - 5) / 16))) / 3, 2);
                         break;
                     default:
                         log1 = Math.pow(2 * Math.log(Math.abs(x[j])), Math.pow(Math.PI + x[j], 3));
                         log2 = Math.log(Math.pow(( Math.abs(x[j]) * (Math.abs(x[j])+1)), x[j]));
                         tan = (2 + Math.tan(Math.pow((Math.E), x[j] ))) / 2;
-                        resdown = Math.pow(log2, tan);
-                        resup = Math.cos(log1) - 4;
+                        resDown = Math.pow(log2, tan);
+                        resUp = Math.cos(log1) - 4;
                         res = Math.pow(resup/resdown, 3);
-                        anew[i][j] = res;
-                      // anew[i][j] = Math.pow((-4 + Math.cos(Math.pow(2 * Math.log(Math.abs(x[j])), Math.pow((Math.PI + x[j]), 3)))) / Math.pow(Math.log(Math.pow(Math.abs(x[j]) * (Math.abs(x[j] + 1)), x[j])), (2 + Math.tan(Math.pow(Math.E, x[j]))) / 2), 3);
+                        aNew[i][j] = res;
+                      // aNew[i][j] = Math.pow((-4 + Math.cos(Math.pow(2 * Math.log(Math.abs(x[j])), Math.pow((Math.PI + x[j]), 3)))) / Math.pow(Math.log(Math.pow(Math.abs(x[j]) * (Math.abs(x[j] + 1)), x[j])), (2 + Math.tan(Math.pow(Math.E, x[j]))) / 2), 3);
                         break;
                 }
             }
@@ -48,10 +48,10 @@ public class Lab1 {
         for (int i = 0; i < 20; i++) {
             for (int k = 0; k < 19; k++) {
                 if (anew[i][k] > max) {
-                    max = anew[i][k];
+                    max = aNew[i][k];
                 }
                 if (anew[i][k] < min) {
-                    min = anew[i][k];
+                    min = aNew[i][k];
                 }
             }
         }
@@ -66,13 +66,13 @@ public class Lab1 {
         String check = "%"+Max.length()+".5f";
         /* for (int i = 0; i < 20; i++) {
             for (int k = 0; k < 19; k++) {
-                System.out.printf(String.format(check, anew[i][k]) + " ");
+                System.out.printf(String.format(check, aNew[i][k]) + " ");
             }
             System.out.println("\n");
         } */
-        Say(check, anew);
+        say(check, aNew);
     }
-    public static void Say(String a, double[][] array) {
+    public static void say(String a, double[][] array) {
         for (int i = 0; i < 20; i++) {
             for (int k = 0; k < 19; k++) {
                 System.out.printf(String.format(a, array[i][k]) + " ");
@@ -80,7 +80,7 @@ public class Lab1 {
             System.out.println();
         }
     }
-    public static float MyRandom() {
+    public static float myRandom() {
         float a = ((float) Math.random()) * 8 - 5.0f;
         return a;
     }
