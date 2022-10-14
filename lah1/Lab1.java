@@ -36,7 +36,7 @@ public class Lab1 {
                         tan = (2 + Math.tan(Math.pow((Math.E), x[j] ))) / 2;
                         resDown = Math.pow(log2, tan);
                         resUp = Math.cos(log1) - 4;
-                        res = Math.pow(resup/resdown, 3);
+                        res = Math.pow(resUp/resDown, 3);
                         aNew[i][j] = res;
                       // aNew[i][j] = Math.pow((-4 + Math.cos(Math.pow(2 * Math.log(Math.abs(x[j])), Math.pow((Math.PI + x[j]), 3)))) / Math.pow(Math.log(Math.pow(Math.abs(x[j]) * (Math.abs(x[j] + 1)), x[j])), (2 + Math.tan(Math.pow(Math.E, x[j]))) / 2), 3);
                         break;
@@ -47,10 +47,10 @@ public class Lab1 {
         double min = 0;
         for (int i = 0; i < 20; i++) {
             for (int k = 0; k < 19; k++) {
-                if (anew[i][k] > max) {
+                if (aNew[i][k] > max) {
                     max = aNew[i][k];
                 }
-                if (anew[i][k] < min) {
+                if (aNew[i][k] < min) {
                     min = aNew[i][k];
                 }
             }
